@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <style>
+            .log {
+                font: 30px;
+                color: rgba(76, 82, 75, 0.971);
+                font-family: Georgia, 'Times New Roman', Times, serif;
+
+            }
+        </style>
+        <script>
+            var seconds=3;
+            function displayseconds()
+            {
+              seconds -= 1;
+              document.getElementById("secondsdisplay").innerText="ระบบจะนำคุณไปสู่หน้าหลักใน " + seconds + "วินาที ...";
+            }
+            setInterval(displayseconds,1000);
+            
+            function redirectpage()
+            {
+              window.location="http://localhost:3000/";
+            }
+            setTimeout('redirectpage()',3000);
+          </script>
+    </head>
+    <body>
+        <center>
+            <h1 class="log">Programming Book Shop</h1>
+            <h2 class="log">เปลี่ยนรหัสผ่านสำเร็จ !!!</h2>
+            <hr/>
+            <div id="secondsdisplay"></div>
+            <img src="../images/Loading_2.gif" height="40" width="40"/>
+        </center>
+    </body>
+</html>

@@ -1,0 +1,251 @@
+
+body {
+    padding: 20px;
+    font: 30px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background: url('../images/1.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+
+  }
+
+  .logo {
+    font-size: 2em;
+    color:#057ca4;
+    user-select: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: -400px;
+  }
+
+  .chhh {
+    font-size: 0.7em;
+    color:#9a1414;
+    user-select: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: -400px;
+  }
+
+  .navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #7d3939;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+  }
+  .navigation a::after {
+    content: '';
+    position: absolute;
+    left:0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin:right;
+    transform: scaleX(0);
+    transition: transform .5s;
+  }
+
+  .navigation a:hover::after {
+    transform: scaleX(1);
+  }
+
+  .wrapper_r {
+    position: relative;
+    width: 510px;
+    height: 650px;
+    margin-left: 750px;
+    margin-top: 100px;
+    background: transparent;
+    border: 4px solid rgba(255, 255, 255, 5);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+  
+  }
+  
+
+
+  .bu2 {
+    font-size: 25px;
+    margin-bottom: 5px;
+    color: rgb(172, 154, 117);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  .cop {
+    margin-top: 10px;
+    margin-left: 19px;
+    width: 430px;
+  }
+
+  .bu {
+    font-size: 25px;
+    background-color: rgb(177, 92, 92);
+    border-radius: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+  }
+
+
+
+  .gg{
+    color: red;
+  }
+
+  .gg2 {
+    color: green;
+  }
+
+  .ale {
+    font-size: 15px;
+  }
+
+  
+  header {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding: 20px 100px;
+    background: transparent;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+  }
+
+ 
+
+  
+
+  a {
+    color: #00B7FF;
+  }
+  
+  .wrapper {
+    position: relative;
+    width: 510px;
+    height: 500px;
+    margin-left: 750px;
+    margin-top: 160px;
+    background: transparent;
+    border: 4px solid rgba(255, 255, 255, 5);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    
+
+  }
+
+  
+  .wrapper_f {
+    position: relative;
+    width: 510px;
+    height: 300x;
+    margin-left: 750px;
+    margin-top: 200px;
+    background: transparent;
+    border: 4px solid rgba(255, 255, 255, 5);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    
+
+  }
+
+  .form-regis {
+    padding: 30px 15px 110px;
+    margin: 0 auto;
+    border: 5px dotted rgba(0,0,0,0.1);
+    
+  }
+
+
+  
+
+  .bu_f_r {
+    font-size: 20px;
+    color: rgb(138, 138, 138);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .form-signin {
+    max-width: 600px;
+    padding: 30px 15px 120px;
+    margin: 0 auto;
+    border: 5px dotted rgba(0,0,0,0.1);
+    
+  }
+  
+  
+  .form-signin-heading {
+    text-align:center;
+    font-size: 40px;
+    margin-bottom: px;
+  }
+  
+  .form-control {
+    position: relative;
+    font-size: 20px;
+    height: auto;
+    padding: 13px;
+    border-radius: 10px;
+
+  }
+  
+  input[type="text"] {
+    margin-bottom: 0px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  input[type="password"] {
+    margin-bottom: 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+ 
+  
+
+
+  input{
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    padding: 12px;
+    border-radius: 5px;
+    outline: none;
+    color: #101010;
+  }
+
+
+
+
+  #login-form input[type="password"],
+  #login-form input[type="text"] {
+      width: 100%;
+      padding: 12px 36px 12px 12px;
+    }
+
+    .password-container{
+      width:460px;
+      position: relative;
+    }
+
+    .fa-eye{
+      position: absolute;
+      top: 28%;
+      right: 4%;
+      cursor: pointer;
+      color: lightgray;
+    }
+
+    .fa-eye-slash{
+      position: absolute;
+      top: 28%;
+      right: 4%;
+      cursor: pointer;
+      color: lightgray;
+    }
+ 
+  
+

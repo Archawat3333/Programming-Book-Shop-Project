@@ -1,0 +1,86 @@
+
+body {
+  padding: 160px;
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: linear-gradient(0deg,#EEE4DB,#FAC99B);
+}
+
+.wrapper_l {
+  position: relative;
+  width: 1130px;
+  height: 100px;
+  margin-left: 300px;
+  margin-top: 5px;
+  background: transparent;
+  font: 5em;
+
+}
+
+.wrapper_r {
+  position: relative;
+  width: 1130px;
+  height: 50px;
+  margin-left: 300px;
+  margin-top: 0px;
+  background: transparent;
+
+}
+a {
+  color: #00B7FF;
+}
+
+
+header {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  padding: 25px 30px;
+  background: linear-gradient(0deg,#EA9243,#EE6226);
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+
+.logo {
+  font-size: 1em;
+  color:#dc2727;
+  user-select: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+
+
+.navigation a {
+  position: relative;
+  font-size: 1.5em;
+  color: #f5f5f5;
+  background: linear-gradient(45deg,#DEA876,#EE6226);
+  border-radius: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 20px;
+  padding: 10px 25px 10px;
+}
+.navigation a::after {
+  content: '';
+  position: absolute;
+  left:0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  transform-origin:right;
+  transform: scaleX(0);
+  transition: transform .5s;
+}
+
+.navigation a:hover::after {
+  transform: scaleX(1);
+}
+
+

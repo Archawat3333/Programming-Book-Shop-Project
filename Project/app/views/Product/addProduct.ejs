@@ -1,0 +1,146 @@
+<%- include('../header') %>
+<div class="container h5">
+    <form method="post" enctype="multipart/form-data">
+        <div class="card mt-3">
+            <div class="card-body">
+
+                <div class="card-title h3"><%= text %> รายการสินค้า</div>
+
+                <table border="0" width="100%">
+
+                    <tr>
+                        <td width="50%">
+                            <div class="mt-3">
+                                <label>ภาพสินค้า</label>
+                                <% if (product.img != undefined) { %>
+                                    <div class="mb-2 mt-1">
+                                        <img src="../images/<%= product.img %>" width="200px" height="250px"  />
+                                        <input type="file" value="product.img" name="img" class="form-control"/>
+                                    </div>
+                                <% } else { %>
+                                    <div class="mb-2 mt-1">
+                                        <input type="file" name="img" class="form-control" />
+                                    </div>
+                                <% } %>
+                                
+                            </div>
+                        </td>
+                        
+                        <td>
+                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="mt-3">
+                                <label>ชื่อสินค้า</label>
+                                <input type="text" name="name" class="form-control" value="<%= product.name %>"/>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mt-3">
+                                <label>ประเภทสินค้า</label>
+                                <select name="group_product_id" class="form-control">
+                                <% groupProducts.forEach((groupProduct) => { %>
+                                    <option value="<%= groupProduct.id %>" 
+                                        <% if (product.group_product_id == groupProduct.id) { %>
+                                            selected
+                                        <% } %>
+                                        >
+                                        <%= groupProduct.name %>
+                                    </option>
+                                    <% }) %>
+                                </select>
+                            </div>
+    
+                            </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="mt-3">
+                                <label>ISBN</label>
+                                <input type="text" name="barcode" class="form-control" value="<%= product.barcode %>"/>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mt-3">
+                                <label>รายละเอียดเพิ่มเติม</label>
+                                <input type="text" name="des" class="form-control" value="<%= product.des %>"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="mt-3">
+                                <label>ราคาทุน</label>
+                                <input type="text" name="cost" class="form-control" value="<%= product.cost %>"/>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mt-3">
+                                <label>ราคาจำหน่าย</label>
+                                <input type="text" name="price" class="form-control" value="<%= product.price %>"/>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="mt-3">
+                                <label>จำนวนหน้า</label>
+                                <input type="text" name="pagelen" class="form-control" value="<%= product.pagelen %>"/>
+                            </div>
+                        </td>
+                        <td>    
+                            <div class="mt-3">
+                                <label>ภาษา</label>
+                                <input type="text" name="lau" class="form-control" value="<%= product.lau %>"/>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="mt-3">
+                                <label>สำนักพิมพ์</label>
+                                <input type="text" name="pub" class="form-control" value="<%= product.pub %>"/>
+                            </div>
+                        </td>
+                        <td>    
+                            <div class="mt-3">
+                                <label>ขนาด</label>
+                                <input type="text" name="size" class="form-control" value="<%= product.size %>"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="mt-3">
+                                <label>จำนวน</label>
+                                <input type="number" name="stock" class="form-control" value="<%= product.stock %>"/>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td>
+                            <div class="mt-3 float-right">
+                                <button type="submit" class="btn btn-info">
+                                    <%= text %>รายการสินค้า
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                </table>
+
+            
+
+              
+                
+            </div>
+        </div>
+    </form>
+</div>
+<%- include('../footer') %>

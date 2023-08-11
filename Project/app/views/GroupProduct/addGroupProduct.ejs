@@ -1,0 +1,26 @@
+<%- include('../header') %>
+
+<div class="container" >
+<form method="post">
+    <div class="card mt-3">
+        <div class="card-body">
+            <div class="card-title egp"><%= text %>รายการ ประเภทสินค้า</div>
+            <div class="mt-3">
+                <label class="h4">ชื่อ</label>
+                <input type="text" name="name" class="form-control" value="<%= groupProduct.name %>"/>
+            </div>
+
+            <div class="mt-3">
+                <button type="submit" class="btn btn-info">
+                    <%= text %>ประเภทสินค้า
+
+                </button>
+            </div>
+
+        </div>
+    </div>
+</form>
+</div>
+
+
+<%- include('../footer') %>

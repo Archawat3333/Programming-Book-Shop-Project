@@ -1,0 +1,46 @@
+<%- include('../header') %>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="class-title sod">
+                ผู้ใช้งานระบบ
+            </div>
+            <a class="btn btn-primary mt-3" href="/addUser">
+                เพิ่มรายการ
+            </a>
+            <table class="table table-bordered table-striped mt-3"> 
+                <thead>
+                    <tr>
+                        <th width="140px"></th>
+                        <th>ชื่อ</th>
+                        <th width="200px">อีเมลล์</th>
+                        <th width="200px">Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% users.forEach((user) => { %>
+                    <tr>
+                            <td>
+                                <a class="btn btn-info" href="/editUser/<%= user.id %>">
+                                    <span class="material-symbols-outlined material-icons">
+                                        edit
+                                        </span>
+                                </a>
+                                <a class="btn btn-danger" href="/deleteUser/<%= user.id %>" onclick="return confirm('Are you sure to delete ?')">
+                                    <span class="material-symbols-outlined material-icons">
+                                        close
+                                        </span>
+                                </a>
+                            </td>
+                            <td> <%= user.name %> </td>
+                            <td> <%= user.email %></td>
+                            <td> <%= user.level %></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include('../footer') %>

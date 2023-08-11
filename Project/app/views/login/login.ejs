@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/stylesheets/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <link rel="stylesheet" href="../stylesheets/login.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <header>
+      
+        <img class="imgl" src="../images/<%= information.img %>" width="120px" height="100px"  />
+        <div >
+          <span class="logo"><%= information.name %></span>
+          <div class="chhh">
+            <u><b>ติดต่อสอบถาม : <%= information.email %></b></u>
+          </div>
+          <div class="chhh">
+            <u><b>เบอร์โทรศัพท์ : <%= information.phone %></b>></u>
+          </div>
+          
+          
+        </div>
+   
+      <nav class="navigation">
+        <a href="/">หน้าหลัก</a>
+        <a href="/register">สมัครสมาชิก</a>
+        <a href="/forgotPassword">ลืมรหัสผ่าน</a>
+      </nav>
+    </header>
+
+    <div class="wrapper">
+      <form class="form-signin" action="/login" method="post">
+        <h6 class="form-signin-heading "><b>Login</b></h6>
+        <div class="mt-3 bu2">Email</div>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          class="form-control"
+          placeholder="name@example.com"
+        />
+        <div class="mt-3 bu2">Password</div>
+        <div>
+          <div class="password-container">
+
+            <input
+              name="pwd"
+              id="password"
+              type="password"
+              class="form-control"
+              placeholder="xxxxxxxx"
+            />
+            <i class="fa-solid fa-eye-slash" id="show-password"></i>
+          </div>
+        </div>
+
+        <span> <a class="bu_f_r" href="/register">Register ?</a></span>
+        <span style="float: right">
+          <a class="bu_f_r" href="/forgotPassword">Forgot Password ?</a></span
+        >
+
+        <% if (num == '1')  { %> 
+
+          <div class="alert alert-danger ale" role="alert">
+            <strong>Error : </strong> <%= text + '.' %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button> 
+          </div>
+
+          <% } else if (num == '2') { %>
+            <div class="alert alert-danger ale" role="alert">
+              <strong>Error : </strong> <%= text + '.' %>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <% } else if (num == '3') { %>
+              <div class="alert alert-success">
+                <h3 class="gg2" style="float: center">Login Success</h3>
+              </div>
+              <% } else { %>
+                <div>
+                  
+                </div>
+
+              <% } %>
+
+        <div class="cop">
+          <span style="float: left">
+            <a class="btn btn mt-3 bu" href="/">Back</a>
+          </span>
+          <span style="float: right">
+            <button
+              type="submit"
+              class="btn btn mt-3 bu"
+              >
+              Login
+            </button>
+          </span>
+        </div>
+
+        
+        
+      </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      const eyeicon = document.getElementById("show-password");
+      const password = document.getElementById("password");
+  
+  
+      eyeicon.onclick = function() {
+          if(password.type == "password") {
+              password.type = "text";
+              this.classList.toggle("fa-eye");
+              this.classList.toggle("fa-eye-slash", !this.classList.contains("fa-eye"));
+          }
+          else {
+              password.type = "password";
+              this.classList.toggle("fa-eye");
+              this.classList.toggle("fa-eye-slash", !this.classList.contains("fa-eye"));        }
+      }
+      </script>
+
+
+  
+  </body>
+</html>

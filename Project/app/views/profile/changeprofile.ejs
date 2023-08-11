@@ -1,0 +1,71 @@
+<%- include('../header') %>
+<div class="container sod">
+    <form method="post" action="/changeProfile" id="login-form">
+        <div class="card mt-3">
+            <div class="card-body">
+                <div class="card-title">แก้ไขข้อมูล</div>
+            
+                <div class="mt-3">
+                    <label>Profile</label>
+                    <% if (user.profile != undefined) { %>
+                        <div class="mb-2 mt-1">
+                            <img src="../images/<%= user.profile %>" width="200px" />
+                            <input type="file" value="user.profile" name="profile" class="form-control"/>
+                        </div>
+                    <% } else { %>
+                        <div class="mb-2 mt-1">
+                            <input type="file" name="profile" class="form-control" />
+                        </div>
+                    <% } %>
+                </div>
+
+
+                <div class="mt-3">
+                    <label>Name</label>
+                    <input type="text" name="name" class="form-control" value="<%= user.name %>"/>
+                </div>
+                <div class="mt-3">
+                    <label>Email</label>
+                    <input type="text" name="email" class="form-control" value="<%= user.email %>"/>
+                </div>
+                <div class="mt-3">
+                    <label>Password <span class="text-danger"><b>(หากไม่ป้อนจะยึดตามรหัสเดิม)</b></span></label>
+                    <div class="password-container">
+                        <input type="password" id="password" name="pwd" class="form-control" value="<%= user.pwd %>" >
+                        <i class="fa-solid fa-eye-slash" id="show-password"></i>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-info">
+                        แก้ไขข้อมูล
+                    </button>
+                </div>
+                <% if (session.message != undefined) { %>
+                    <div class="alert alert-success mt-3">
+                        <%= session.message %>
+                        <% session.message = undefined %>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </form>
+    <script>
+    const eyeicon = document.getElementById("show-password");
+    const password = document.getElementById("password");
+
+    ("password");
+
+    eyeicon.onclick = function() {
+        if(password.type == "password") {
+            password.type = "text";
+            this.classList.toggle("fa-eye");
+            this.classList.toggle("fa-eye-slash", !this.classList.contains("fa-eye"));
+        }
+        else {
+            password.type = "password";
+            this.classList.toggle("fa-eye");
+            this.classList.toggle("fa-eye-slash", !this.classList.contains("fa-eye"));        }
+    }
+    </script>
+</div>
+<%- include('../footer') %>

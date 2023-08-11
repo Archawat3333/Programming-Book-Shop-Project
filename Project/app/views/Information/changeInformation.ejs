@@ -1,0 +1,101 @@
+<%- include('../header') %>
+<div class="container sod">
+    <form method="post" enctype="multipart/form-data">
+        <div class="card mt-3">
+            <div class="card-body">
+                <div class="card-title h4"> แก้ไขข้อมูล</div>
+                <div class="mt-3">
+                    <label>โลโก้เว็บ</label>
+                    <% if (product.img != undefined) { %>
+                        <div class="mb-2 mt-1">
+                            <img src="../images/<%= product.img %>" width="200px" />
+                            <input type="file" value="product.img" name="img" class="form-control"/>
+                        </div>
+                    <% } else { %>
+                    <div class="mb-2 mt-1">
+                        <input type="file" name="img" class="form-control" />
+                    </div>
+                    <% } %>
+                </div>
+
+                <table border="0">
+                    <tr>
+                        <td>
+                            <div class="mt-3">
+                                <label>ชื่อเว็บ </label>
+                                <input type="text" name="name" value='<%= product.name %>'class="form-control" />
+                            </div>
+                        </td>
+                            
+                        <td>
+                            <div class="mt-3">
+                                <label>ที่อยู่การติดต่อ </label>
+                                <input type="text" name="address" value='<%= product.address %>'class="form-control" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mt-3">
+                                <label>อีเมลล์ </label>
+                                <input type="text" name="email" value='<%= product.email %>'class="form-control" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mt-3">
+                                <label>เบอร์โทร </label>
+                                <input type="text" name="phone" value='<%= product.phone %>'class="form-control" />
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="mt-3">
+                                <label>ธนาคาร </label>
+                                <input type="text" name="bank" value='<%= product.bank %>'class="form-control" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mt-3">
+                                <label>เลขบัญชี </label>
+                                <input type="text" name="numbank" value='<%= product.numbank %>'class="form-control" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mt-3">
+                                <label>ชื่อ-สกุล </label>
+                                <input type="text" name="namebank" value='<%= product.namebank %>'class="form-control" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mt-3">
+                                <label>หมายเลขพร้อมเพย์ </label>
+                                <input type="text" name="pp" value='<%= product.pp %>'class="form-control" />
+                            </div>
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div class="mt-3 float-right">
+                                <button type="submit" class="btn btn-primary">
+                                    <span class="h5">แก้ไขข้อมูล</span>
+                                </button>
+                            </div> 
+                        </td>
+                    </tr>
+
+                </table>
+
+
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<%- include('../footer') %>

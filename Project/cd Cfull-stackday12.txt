@@ -1,0 +1,28 @@
+cd C:\full-stack\day11
+express --view=ejs app
+cd app
+npm install 
+npm install mysql
+npm install dayjs
+npm install nodemon
+npm install express-session
+npm install jsonwebtoken
+
+npm install formidable
+
+npm install mysql2
+
+npm install numeral
+
+npx nodemon
+
+
+การนำโปรเจคไปรันบน PM2
+npm install pm2 -g
+pm2 start bin/www --name "Archawat Shop"
+
+
+pm2 list ใช้ดู
+pm2 stop ชื่อid ใช้หยุด ถ้าอยากเปิดพิมพ์ pm2 restart ชื่อ id
+
+pm2 delete ชื่อ id

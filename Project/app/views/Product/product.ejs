@@ -1,0 +1,58 @@
+<%- include('../header') %>
+<div class="container">
+    <div class="card mt-3">
+        <div class=card-body>
+            <div class="card-title h4">สินค้า</div>
+            <div class="mt-3">
+                <a class="btn btn-info" href="/addProduct">
+                    <span class="material-symbols-outlined material-icons">
+                        add
+                    </span>
+                    เพิ่มรายการ
+                </a>
+            </div>
+            <div class="mt-3">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th width="140px"></th>
+                            <th>ภาพสินค้า</th>
+                            <th>ประเภทสินค้า</th>
+                            <th>บาโค้ค</th>
+                            <th>รายการสินค้า</th>
+                            <th class="text-right">ราคาทุน</th>
+                            <th class="text-right">ราคาจำหน่าย</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% products.forEach((product) => { %>
+                            <tr>
+                                <td>
+                                    <a class="btn btn-info" href="/editProduct/<%= product.id %>">
+                                        <span class="material-symbols-outlined material-icons">
+                                            edit
+                                        </span>
+                                    </a>
+                                    <a class="btn btn-danger" href="/deleteProduct/<%= product.id %>/<%= product.img %>"
+                                        onclick="return confirm('Are you sure to delete ?')">
+                                        <span class="material-symbols-outlined material-icons">
+                                            close
+                                        </span>
+                                    </a>
+                                </td>
+                                <td><img src="/images/<%= product.img %>" width="100px"/></td>
+                                <td><%= product.group_product_name %></td>
+                                <td><%= product.barcode %></td>
+                                <td><%= product.name %></td>
+                                <td class="text-right"><%= product.cost %></td>
+                                <td class="text-right"><%= product.price %></td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../footer') %>
